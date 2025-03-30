@@ -7,7 +7,7 @@
 
 
 int main(){
-   
+   // CRIAÇÃO DE VARIAVEIS
     char estado,estado2;
     char codigo_carta[4],codigo_carta2[4];
     char nomeCidade[50];
@@ -17,7 +17,7 @@ int main(){
     float pib_cidade,pib_cidade2;
     int ponto_turisticos,ponto_turisticos2;
 
-    //OBTENDO CARTA 01 
+    //OBTENDO DADOS - CARTA 01 
     printf("\nQual Estado: ");
     scanf(" %c",&estado);
     printf("\nCodigo da Carta: ");
@@ -33,7 +33,7 @@ int main(){
     printf("\nPontos Turisticos:");
     scanf("%d",&ponto_turisticos);
 
-    //OBTENDO CARTA 02
+    //OBTENDO DADOS - CARTA 02
 
     printf("\nQual Estado: ");
     scanf(" %c",&estado2);
@@ -50,7 +50,7 @@ int main(){
     printf("\nPontos Turisticos:");
     scanf("%d",&ponto_turisticos2);
 
-    //carta 01
+    //EXIBIR DADOS OBTIDOS CARTA 01
     printf("############# DADOS PREENCIDOS ###################\n\n");
 
     printf("Estado: \n",&estado);
@@ -61,7 +61,7 @@ int main(){
     printf("Pib: \n",&pib_cidade);
     printf("turismo:\n",&ponto_turisticos);
 
-    //carta 02
+    //EXIBIR DADOS OBTIDOS CARTA 02
     printf("Estado: \n",&estado2);
     printf("Codigo: \n",&codigo_carta2);
     printf("Cidade: \n",&nomeCidade2);
