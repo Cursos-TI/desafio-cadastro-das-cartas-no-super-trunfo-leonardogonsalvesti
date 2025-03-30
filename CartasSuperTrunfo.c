@@ -4,14 +4,10 @@
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
 
-int main() {
-
-    #include <stdio.h>
 
 int main(){
-    // %9S 
+   
     char estado,estado2;
     char codigo_carta[4],codigo_carta2[4];
     char nomeCidade[50];
@@ -73,10 +69,6 @@ int main(){
     printf("Area: \n",&area_cidade2);
     printf("Pib: \n",&pib_cidade2);
     printf("turismo: \n",&ponto_turisticos2);
-
-    return 0;
-}
-
 
     return 0;
 }
