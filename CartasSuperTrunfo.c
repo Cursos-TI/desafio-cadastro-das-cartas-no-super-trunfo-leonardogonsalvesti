@@ -1,13 +1,7 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-
-
 int main(){
-   // CRIAÇÃO DE VARIAVEIS
+    
     char estado,estado2;
     char codigo_carta[4],codigo_carta2[4];
     char nomeCidade[50];
@@ -16,10 +10,14 @@ int main(){
     float area_cidade,area_cidade2;
     float pib_cidade,pib_cidade2;
     int ponto_turisticos,ponto_turisticos2;
+    float Densidade_populacional,Densidade_populacional2;
+    float PIB_per_capita,PIB_per_capita2;
 
-    //OBTENDO DADOS - CARTA 01 
+    
+
+    //OBTENDO CARTA 01 ;
     printf("\nQual Estado: ");
-    scanf(" %c",&estado);
+    scanf(" %c",&estado2);  
     printf("\nCodigo da Carta: ");
     scanf(" %s",&codigo_carta);
     printf("\nNome da Cidade: ");
@@ -33,7 +31,8 @@ int main(){
     printf("\nPontos Turisticos:");
     scanf("%d",&ponto_turisticos);
 
-    //OBTENDO DADOS - CARTA 02
+    
+    //OBTENDO CARTA 02;
 
     printf("\nQual Estado: ");
     scanf(" %c",&estado2);
@@ -49,26 +48,41 @@ int main(){
     scanf("%f",&pib_cidade2);
     printf("\nPontos Turisticos:");
     scanf("%d",&ponto_turisticos2);
+    
+ 
+    //CALCULO DA DENSIDADE POPULACIONAL E PIB CAPITA DA CARTA 01;
+    Densidade_populacional =(int) (populacao / area_cidade);
+    PIB_per_capita =(float) (pib_cidade / populacao);
+    //CALCULO DA DENSIDADE POPULACIONAL E PIB CAPITA DA CARTA 02;
+    Densidade_populacional2 =(int) (populacao / area_cidade);
+    PIB_per_capita2 =(float) (pib_cidade / populacao);
 
-    //EXIBIR DADOS OBTIDOS CARTA 01
-    printf("############# DADOS PREENCIDOS ###################\n\n");
+    //carta 01;
+    //printf("############# DADOS PREENCIDOS CARTA 01 ###################\n\n");
 
-    printf("Estado: \n",&estado);
-    printf("Codigo: \n",&codigo_carta);
-    printf("Cidade: \n",&nomeCidade);
-    printf("População: \n",&populacao);
-    printf("Area: \n",&area_cidade);
-    printf("Pib: \n",&pib_cidade);
-    printf("turismo:\n",&ponto_turisticos);
+    printf("\nEstado: %c",estado);
+    printf("\nCodigo: %s",codigo_carta);
+    printf("\nCidade: %s",nomeCidade);
+    printf("\nPopulação: %d",populacao);
+    printf("\nArea: %f",area_cidade);
+    printf("\nPib: %f",pib_cidade);
+    printf("\nturismo:%d",ponto_turisticos);
+    printf("\nPIB Per Capita:%f",PIB_per_capita);
+    printf("\nDensidade Populacional:%.2f",Densidade_populacional);
 
-    //EXIBIR DADOS OBTIDOS CARTA 02
-    printf("Estado: \n",&estado2);
-    printf("Codigo: \n",&codigo_carta2);
-    printf("Cidade: \n",&nomeCidade2);
-    printf("População: \n",&populacao2);
-    printf("Area: \n",&area_cidade2);
-    printf("Pib: \n",&pib_cidade2);
-    printf("turismo: \n",&ponto_turisticos2);
 
+    
+    printf("\n############# DADOS PREENCIDOS CARTA 02 ###################\n\n");
+    //carta 02;
+    printf("\nEstado: %c",estado2);
+    printf("\nCodigo: %s",codigo_carta2);
+    printf("\nCidade: %s",nomeCidade2);
+    printf("\nPopulação: %d",populacao2);
+    printf("\nArea: %f",area_cidade2);
+    printf("\nPib: %f",pib_cidade2);
+    printf("\nturismo:%d",ponto_turisticos2);
+    printf("\nPIB Per Capita:%f",PIB_per_capita2);
+    printf("\nDensidade Populacional:%.2f",Densidade_populacional2);
+    
     return 0;
 }
