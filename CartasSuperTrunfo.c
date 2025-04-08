@@ -97,27 +97,26 @@ int main(){
     printf("\nPoder: %f\n",super_PoderB);
     
 
-    //validacao e comparacao de dados para escolher a carta que ira vencer.
 
     
-    printf(" Resultado da comparação:\n");
+    printf("\n############# Qual carta foi a vencedora ###################\n\n");
 
 
-    float ResultadoPopulacao = populacao > populacao2;
-    printf(" População: Carta 1 venceu? %f\n", ResultadoPopulacao);
-    float ResultadoArea = area_cidade > area_cidade2;
-    printf(" Área: Carta 1 venceu? %f\n", ResultadoArea);
-    float ResultadoPib = pib_cidade > pib_cidade2;
-    printf(" PIB: Carta 1 venceu? %f\n", ResultadoPib);
-    float ResultadoTuristico = ponto_turisticos > ponto_turisticos2;
-    printf(" Pontos Turísticos:  Carta 1 venceu? %f\n", ResultadoTuristico);
-    float ResultadoDesindade = Densidade_populacional < Densidade_populacional2;
-    printf(" Densidade Populacional:  Carta 1 venceu? %f\n", ResultadoDesindade);
-    float ResultadoPercapita = PIB_per_capita > PIB_per_capita2;
-    printf(" PIB per Capita:  Carta 1 venceu? %f\n", ResultadoPercapita);
-    float ResultadoPoder = super_PoderA > super_PoderB;
-    printf(" Super Poder: Carta 1 venceu? %f\n", ResultadoPoder);
+    //REALIZANDO A COMPARAÇÃO DOS DADOS
+    //Utilizei o super poder porque é a combinação de todos os dados.
+    printf("Carta 1 - %s tem poder igual a: %f\n",nomeCidade,super_PoderA);
+    printf("Carta 2 - %s tem poder igual a: %f\n",nomeCidade2,super_PoderB);
 
+    if(super_PoderA > super_PoderB){
+        printf("\nA Carta 1 - %s Venceu!\n",nomeCidade);
+    }else{
+        if (super_PoderA == super_PoderB){
+            printf("\nEmpatou!\n");
+        }else{
+            printf("\nA Carta 2 - %s Venceu!\n",nomeCidade2);
+        }    
+    }
+    
     
     return 0;
 }
