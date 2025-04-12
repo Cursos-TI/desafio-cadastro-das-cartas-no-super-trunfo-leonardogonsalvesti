@@ -15,15 +15,15 @@ int main(){
     float PIB_per_capita,PIB_per_capita2;
     float super_PoderA,super_PoderB;
     float inverso_densidadeP_A,inverso_densidadeP_B;
-    int escolhaJogador;
+    int primeiraEscolha,segundaEscolha, resultado1,resultado2;
 
     //OBTENDO DADOS DA CARTA 01 
     printf("\nQual Estado: ");
-    scanf(" %c",&estado2);  
+    scanf("%c",&estado2);  
     printf("\nCodigo da Carta: ");
-    scanf(" %s",&codigo_carta);
+    scanf("%s",&codigo_carta);
     printf("\nNome da Cidade: ");
-    scanf(" %49s",&nomeCidade);     
+    scanf("%s",&nomeCidade);  
     printf("\nNumero de Habitantes:");
     scanf("%d",&populacao);
     printf("\nArea da Cidade:");
@@ -36,11 +36,11 @@ int main(){
     
     //OBTENDO DADOS DA  CARTA 02
     printf("\nQual Estado: ");
-    scanf(" %c",&estado2);
+    scanf("%c",&estado2);
     printf("\nCodigo da Carta: ");
-    scanf(" %s",&codigo_carta2);
+    scanf("%s ",&codigo_carta2);
     printf("\nNome da Cidade: ");
-    scanf(" %49s",&nomeCidade2);     
+    scanf("%s",&nomeCidade2);     
     printf("\nNumero de Habitantes:");
     scanf("%d",&populacao2);
     printf("\nArea da Cidade:");
@@ -98,78 +98,60 @@ int main(){
     
 //CRIAÇÃO DO MENU DE ESCOLHA DA BATALHA DAS CARTAS.
 
-    printf("\n############# selecione o poder a utilizar ###################\n");
+    printf("\n############# selecione 2 poder a utilizar ###################\n");
 
-    printf("Escolha uma opção para batalha!\n");
+    printf("Escolha a primeira opção para batalha!\n");
     printf("1. População\n");
     printf("2. Area\n");
     printf("3. Pib\n");
     printf("4. Pontos Turisticos\n");
     printf("5. Densidade Populacional\n");
-    printf("SUA ESCOLHA: ");
-    scanf("%d", &escolhaJogador);
+    printf("QUAL O PRIMEIRO PODER: ");
+    scanf("%d", &primeiraEscolha);
+
 
 //LOGICA DE BATALHA DAS CARTAS BASEADO NA ESCOLHA DO JOGADOR.
 
-    switch (escolhaJogador){
+    switch (primeiraEscolha){
         case 1:
             printf("você escolheu População\n");
-            printf("Carta 1 - %s tem poder igual a: %ld\n",nomeCidade,populacao);
-            printf("Carta 2 - %s tem poder igual a: %ld\n",nomeCidade2,populacao2);
-            if(populacao > populacao2){
-                printf("\nA Carta 1 - %s Venceu!\n",nomeCidade);
-            }else if (populacao < populacao2){                    
-                printf("\nA Carta 2 - %s Venceu!\n",nomeCidade2);
+            if (populacao != populacao2){//verifica se o valor é diferente, se for quer dizer que não temos um empate, então segue com o codigo.
+                resultado1 = populacao > populacao2 ? 1 : 0;
             }else{
-                printf("\nEmpatou!\n");            
+                printf("\nEmpatou!\n");
             }
             break; 
         case 2:
             printf("você escolheu Area\n");
-            printf("Carta 1 - %s tem poder igual a: %ld\n",nomeCidade,area_cidade);
-            printf("Carta 2 - %s tem poder igual a: %ld\n",nomeCidade2,area_cidade2);
-            if(area_cidade > area_cidade2){
-                printf("\nA Carta 1 - %s Venceu!\n",nomeCidade);
-            }else if (area_cidade < area_cidade2){                    
-                printf("\nA Carta 2 - %s Venceu!\n",nomeCidade2);
+            if (area_cidade != area_cidade2){
+                resultado1 = area_cidade > area_cidade2 ? 1 : 0;
             }else{
-                printf("\nEmpatou!\n");            
+                printf("\nEmpatou!\n");
             }
             break; 
         case 3:
             printf("você escolheu Pib\n");
-            printf("Carta 1 - %s tem poder igual a: %ld\n",nomeCidade,pib_cidade);
-            printf("Carta 2 - %s tem poder igual a: %ld\n",nomeCidade2,pib_cidade2);
-            if(pib_cidade > pib_cidade2){
-                printf("\nA Carta 1 - %s Venceu!\n",nomeCidade);
-            }else if (pib_cidade < pib_cidade2){                    
-                printf("\nA Carta 2 - %s Venceu!\n",nomeCidade2);
+            if (pib_cidade != pib_cidade2){
+                resultado1 = pib_cidade < pib_cidade2 ? 1 : 0;
             }else{
-                printf("\nEmpatou!\n");            
+                printf("\nEmpatou!\n");
             }
             break; 
         case 4:
             printf("Você escolheu Pontos Turisticos\n");
-            printf("Carta 1 - %s tem poder igual a: %ld\n",nomeCidade,ponto_turisticos);
-            printf("Carta 2 - %s tem poder igual a: %ld\n",nomeCidade2,ponto_turisticos2);
-            if(ponto_turisticos > ponto_turisticos2){
-                printf("\nA Carta 1 - %s Venceu!\n",nomeCidade);
-            }else if (ponto_turisticos < ponto_turisticos2){                    
-                printf("\nA Carta 2 - %s Venceu!\n",nomeCidade2);
+            if (ponto_turisticos != ponto_turisticos2){
+                resultado1 = ponto_turisticos > ponto_turisticos2 ? 1 : 0;
             }else{
-                printf("\nEmpatou!\n");            
+                printf("\nEmpatou!\n");
             }
+
             break; 
         case 5:
             printf("você escolheu Densidade Populacional\n");
-            printf("Carta 1 - %s tem poder igual a: %ld\n",nomeCidade,Densidade_populacional);
-            printf("Carta 2 - %s tem poder igual a: %ld\n",nomeCidade2,Densidade_populacional2);
-            if(Densidade_populacional < Densidade_populacional2){
-                printf("\nA Carta 1 - %s Venceu!\n",nomeCidade);
-            }else if (Densidade_populacional > Densidade_populacional2){                    
-                printf("\nA Carta 2 - %s Venceu!\n",nomeCidade2);
+            if (Densidade_populacional != Densidade_populacional2){
+                resultado1 = Densidade_populacional > Densidade_populacional2 ? 1 : 0;
             }else{
-                printf("\nEmpatou!\n");            
+                printf("\nEmpatou!\n");
             }
             break;        
         default:
@@ -177,6 +159,78 @@ int main(){
             break;
         }
  
+    printf("Escolha a segunda opção para batalha!\n");
+    printf("Você não pode escolher o atributo numero:%d!\n",&primeiraEscolha);
+        
+    printf("1. População\n");
+    printf("2. Area\n");
+    printf("3. Pib\n");
+    printf("4. Pontos Turisticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("QUAL O SEGUNDO PODER: ");
+    scanf("%d", &segundaEscolha);
+    
+    if ( primeiraEscolha == segundaEscolha){
+        printf("você escolheu o mesmo atributo, execulte novamente o programa!");
+    }else{
+        switch (segundaEscolha){
+            case 1:
+                printf("você escolheu População\n");
+                if (populacao != populacao2){
+                    resultado1 = populacao > populacao2 ? 1 : 0;
+                }else{
+                    printf("\nEmpatou!\n");
+                }
+                break; 
+            case 2:
+                printf("você escolheu Area\n");
+                if (area_cidade != area_cidade2){
+                    resultado1 = area_cidade > area_cidade2 ? 1 : 0;
+                }else{
+                    printf("\nEmpatou!\n");
+                }
+                break; 
+            case 3:
+                printf("você escolheu Pib\n");
+                if (pib_cidade != pib_cidade2){
+                    resultado1 = pib_cidade < pib_cidade2 ? 1 : 0;
+                }else{
+                    printf("\nEmpatou!\n");
+                }
+                break; 
+            case 4:
+                printf("Você escolheu Pontos Turisticos\n");
+                if (ponto_turisticos != ponto_turisticos2){
+                    resultado1 = ponto_turisticos > ponto_turisticos2 ? 1 : 0;
+                }else{
+                    printf("\nEmpatou!\n");
+                }
+    
+                break; 
+            case 5:
+                printf("você escolheu Densidade Populacional\n");
+                if (Densidade_populacional != Densidade_populacional2){
+                    resultado1 = Densidade_populacional > Densidade_populacional2 ? 1 : 0;
+                }else{
+                    printf("\nEmpatou!\n");
+                }
+                break;        
+            default:
+                printf("Opção invalida!, Tente execultar novamente e escolher uma opção valida\n");
+                break;
+            }
+    }
+    
+
+    //verifica a vitória do jogador
+    if (resultado1 && resultado2){
+        printf("Parabéns você Venceu.");
+    }else if (resultado1 != resultado2){
+        printf("jogo Empatou!");
+    }else{
+        printf("Infelismente você Perdeu");
+    }
+
     
     return 0;
 }
